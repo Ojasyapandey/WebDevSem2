@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result Calculator</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+    width:300px;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+button{
+    background:#4facfe;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2d8cf0;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Result Calculator</h2>
+
+<button onclick="calculate()">Calculate Result</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let n = Number(prompt("Enter number of subjects"));
+
+let total = 0;
+
+for(let i=1;i<=n;i++){
+
+let marks = parseFloat(prompt("Enter marks of subject " + i));
+
+total = total + marks;
+
+}
+
+let percentage = total / n;
+
+let result;
+
+if(percentage >= 40){
+result = "PASS";
+}
+else{
+result = "FAIL";
+}
+
+document.getElementById("result").innerHTML =
+"Total Marks: " + total + "<br>" +
+"Percentage: " + percentage.toFixed(2) + "%<br>" +
+"Result: " + result;
+
+}
+
+</script>
+
+</body>
+</html>
