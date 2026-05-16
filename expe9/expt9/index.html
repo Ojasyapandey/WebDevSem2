@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body{
+      font-family: Arial;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#f2f2f2;
+    }
+
+    .container{
+      width:300px;
+      padding:20px;
+      border:1px solid gray;
+      background:white;
+      text-align:center;
+      box-shadow:0 0 10px lightgray;
+    }
+
+    input{
+      width:90%;
+      padding:10px;
+      margin:10px 0;
+    }
+
+    button{
+      padding:10px 20px;
+      background:gray;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
+
+    #users{
+      margin-top:20px;
+      background:#eef8ee;
+      padding:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="email" id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <button onclick="register()">Register</button>
+
+  <p id="msg"></p>
+
+  <div id="users">
+    <h3>Registered Users</h3>
+    <ul id="list"></ul>
+  </div>
+</div>
+
+<script>
+  function register(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    document.getElementById("msg").innerHTML =
+      "Registration Successful!";
+
+    let li = document.createElement("li");
+    li.innerHTML = name + " - " + email;
+
+    document.getElementById("list").appendChild(li);
+  }
+</script>
+
+</body>
+</html>
